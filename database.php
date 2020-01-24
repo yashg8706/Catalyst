@@ -1,11 +1,11 @@
 <?php
 class Database
 {
-	private static $user = 'root';
-	private static $pass = ''; 
+	private static $user = 'b3afd3866c7767';
+	private static $pass = '2d3bddce'; 
 	//private static $pass = 'root'; //change to nothing with xampp
-	private static $db = 'webdev_networking';
-	private static $dsn = 'mysql:host=localhost;dbname=webdev_networking';
+	private static $db = 'heroku_dcf0c1cb17b5e2b';
+	private static $dsn = 'us-cdbr-iron-east-05.cleardb.net';
 	private static $dbcon;
 	private function __construct()
 	{
