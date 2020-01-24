@@ -5,7 +5,7 @@ class Database
 	private static $pass = '2d3bddce'; 
 	//private static $pass = 'root'; //change to nothing with xampp
 	private static $db = 'heroku_dcf0c1cb17b5e2b';
-	private static $dsn = 'mysql://b3afd3866c7767:2d3bddce@us-cdbr-iron-east-05.cleardb.net/heroku_dcf0c1cb17b5e2b?reconnect=true';
+	private static $dsn = 'mysql:host=us-cdbr-iron-east-05.cleardb.net;dbname=heroku_dcf0c1cb17b5e2b';
 	private static $dbcon;
 	private function __construct()
 	{
