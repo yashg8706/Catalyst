@@ -17,7 +17,8 @@ class Database
 	public static function getDb(){
 		if(!isset(self::$dbcon)){
 			try{
-				self::$dbcon = new mysqli($server, $username, $password, $db);
+				self::$dbcon = new PDO(self::$server, self::$username, self::$password, $db);
+				self::$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			} catch (PDOException $e){
 				$msg = $e->getMessage();
 				echo $msg;
@@ -27,3 +28,4 @@ class Database
 		return self::$dbcon;
 	}
 }
+
