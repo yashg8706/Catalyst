@@ -4,10 +4,11 @@ class Database
 {
 	private $url = parse_url(getenv("mysql://b3afd3866c7767:2d3bddce@us-cdbr-iron-east-05.cleardb.net/heroku_dcf0c1cb17b5e2b?reconnect=true"));
 
-	private $server = $url["host"];
-	private $username = $url["user"];
-	private $password = $url["pass"];
-	private $db = substr($url["path"], 1);
+	private static $server = $url["host"];
+	private static $username = $url["user"];
+	private static $password = $url["pass"];
+	private static $db = substr($url["path"], 1);
+	private static $dsn = 'mysql:host='.self::$server.';dbname='.self::$db;
 
 	private static $dbcon;
 	private function __construct()
@@ -17,7 +18,7 @@ class Database
 	public static function getDb(){
 		if(!isset(self::$dbcon)){
 			try{
-				self::$dbcon = new PDO(self::$server, self::$username, self::$password, $db);
+				self::$dbcon = new PDO(self::$dsn, self::$username, self::$password);
 				self::$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			} catch (PDOException $e){
 				$msg = $e->getMessage();
@@ -28,4 +29,3 @@ class Database
 		return self::$dbcon;
 	}
 }
-
