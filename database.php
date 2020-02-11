@@ -19,7 +19,7 @@ class Database
 	public static function getDb(){
 		if(!isset(self::$dbcon)){
 			try{
-				var_dump ("inside the getDb"); 
+				echo "inside the getDb"; 
 				self::$dbcon = new PDO(self::$dsn, self::$username, self::$password);
 				self::$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			} catch (PDOException $e){
