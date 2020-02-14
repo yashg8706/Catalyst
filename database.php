@@ -2,15 +2,13 @@
 
 class Database
 {
-	private $url = parse_url(getenv("mysql://b3afd3866c7767:2d3bddce@us-cdbr-iron-east-05.cleardb.net/heroku_dcf0c1cb17b5e2b?reconnect=true"));
 	//CLEARDB_DATABASE_URL => mysql://[username]:[password]@[host]/[database name]?reconnect=true
 
-	$url = parse_url(getenv("mysql://b3afd3866c7767:2d3bddce@us-cdbr-iron-east-05.cleardb.net/heroku_dcf0c1cb17b5e2b?reconnect=true"));
-
-	private $server = $url["host"];
-	private $username = $url["user"];
-	private $password = $url["pass"];
-	private $db = substr($url["path"], 1);
+	
+	private $server = "enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+	private $username = "o9lrmsmcosdkvgay";
+	private $password = "vk0xitrxvgi9d9zt";
+	private $db = "i4z7ktmu4ei6pto7";
 
 	private function __construct()
 	{
